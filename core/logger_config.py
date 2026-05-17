@@ -2,7 +2,7 @@ import logging
 
 logging.basicConfig(
 
-    filename='../logs/monitor.log',
+    filename='logs/monitor.log',
 
     level=logging.INFO,
 

@@ -4,7 +4,7 @@ import sqlite3 as sq
 
 from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor
-import logger_config
+from core import logger_config
 
 
 def Fetch_data(Url):
@@ -97,8 +97,11 @@ Urls=[
 ]
     
     
-with ThreadPoolExecutor(max_workers=10) as TPE :
-    results= TPE.map(Fetch_data,Urls)
+    
+    
+def monitor () :
+    with ThreadPoolExecutor(max_workers=10) as TPE :
+        results= TPE.map(Fetch_data,Urls)
     
     
 
