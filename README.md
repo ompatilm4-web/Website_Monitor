@@ -101,28 +101,7 @@ J --> K[uptime_report.txt]
 
 ---
 
-## Installation & Usage
 
-**1. Clone the repository**
-
-```bash
-git clone https://github.com/your-username/website-monitor.git
-cd website-monitor
-```
-
-**2. Install dependencies**
-
-```bash
-pip install requests
-```
-
-**3. Run the monitor**
-
-```bash
-python main.py
-```
-
----
 
 ## Output Files
 
@@ -144,11 +123,5 @@ python main.py
 
 ---
 
-## License
 
-This project is free to use for educational and personal purposes.
 
----
-
-**Author:** Your Name  
-**Version:** 1.0.0
