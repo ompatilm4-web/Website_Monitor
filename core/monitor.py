@@ -4,6 +4,7 @@ import sqlite3 as sq
 
 from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor
+import logger_config
 
 
 def Fetch_data(Url):
@@ -27,9 +28,13 @@ def Fetch_data(Url):
         status = "UP"
         # Website Name
         website_name = Url.split("//")[1]
+        
+        logger_config.Logger.info("Websites are Fetched Successfully !")
+        
         print(f"Fetched {website_name}")
+        
         # Connect Database
-        connection = sq.connect('../data/websites.db')
+        connection = sq.connect('data/websites.db')
         cursor = connection.cursor()
         # Insert Data
         cursor.execute('''
@@ -50,6 +55,7 @@ def Fetch_data(Url):
 
         # Save Changes
         connection.commit()
+        logger_config.Logger.info("Fetched Websites are stored in the Db file  Successfully !")
 
         # Close Database
         connection.close()

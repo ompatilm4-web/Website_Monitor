@@ -1,0 +1,26 @@
+Website_name,URLs,Response Time,Status
+www.wikipedia.org,https://www.wikipedia.org,0.3735215663909912,UP
+www.google.com,https://www.google.com,0.3893287181854248,UP
+www.apple.com,https://www.apple.com,0.47295546531677246,UP
+www.microsoft.com,https://www.microsoft.com,0.5406064987182617,UP
+www.reddit.com,https://www.reddit.com,0.23585057258605957,UP
+www.openai.com,https://www.openai.com,0.6350600719451904,UP
+www.amazon.in,https://www.amazon.in,0.7114617824554443,UP
+www.github.com,https://www.github.com,0.847614049911499,UP
+www.youtube.com,https://www.youtube.com,0.8910038471221924,UP
+www.flipkart.com,https://www.flipkart.com,0.985065221786499,UP
+www.python.org,https://www.python.org,0.3541238307952881,UP
+www.linkedin.com,https://www.linkedin.com,0.7088074684143066,UP
+www.oracle.com,https://www.oracle.com,0.24573874473571777,UP
+www.djangoproject.com,https://www.djangoproject.com,0.5290777683258057,UP
+www.facebook.com,https://www.facebook.com,0.916323184967041,UP
+www.adobe.com,https://www.adobe.com,0.17938661575317383,UP
+pandas.pydata.org,https://pandas.pydata.org,0.7039918899536133,UP
+www.instagram.com,https://www.instagram.com,1.1376705169677734,UP
+numpy.org,https://numpy.org,0.699500560760498,UP
+www.tesla.com,https://www.tesla.com,0.3532693386077881,UP
+www.ibm.com,https://www.ibm.com,0.8960020542144775,UP
+www.spotify.com,https://www.spotify.com,0.8031594753265381,UP
+www.stackoverflow.com,https://www.stackoverflow.com,1.8949544429779053,UP
+www.netflix.com,https://www.netflix.com,2.6407723426818848,UP
+www.twitter.com,https://www.twitter.com,3.7932322025299072,UP
