@@ -15,7 +15,7 @@ def Fetch_data(Url):
         start = time.time()
         
         # Fetch Website
-        response = requests.get(Url)
+        response = requests.get(Url,timeout=3)
         # Parse HTML
         Soup = BeautifulSoup(response.content, 'html.parser')
         # End Timer

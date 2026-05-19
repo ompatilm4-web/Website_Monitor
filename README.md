@@ -1,3 +1,4 @@
+
 # Website Monitor
 
 > A lightweight, modular Python tool for monitoring website availability, measuring response times, logging activity, persisting results in SQLite, and generating uptime reports.
@@ -31,9 +32,23 @@
 
 ## Folder Structure
 
+Here’s a **copy-paste ready `README.md`** with a clear **folder structure** and **Mermaid system flow diagram**.
+
+---
+
+# 🌐 Website Monitor (Python)
+
+A lightweight Python-based website monitoring tool that checks website availability, measures response time, logs activity, stores results in a local SQLite database, and generates uptime reports.
+
+---
+
+## 📁 Folder Structure
+>>>>>>> 85f85e3 (implemented the Flask and done with the UI)
+
 ```
 website-monitor/
 │
+
 ├── main.py               # Entry point
 ├── monitor.py            # Core monitoring logic
 ├── database.py           # SQLite database operations
@@ -43,11 +58,24 @@ website-monitor/
 ├── websites.db           # Generated: monitoring data
 ├── monitor.log           # Generated: activity log
 └── uptime_report.txt     # Generated: uptime summary
+├── main.py
+├── monitor.py
+├── database.py
+├── logger_config.py
+├── reports.py
+│
+├── websites.db
+├── monitor.log
+└── uptime_report.txt
 ```
 
 ---
 
+<<<<<<< HEAD
 ## System Flow
+=======
+## 🔁 System Flow Diagram (Mermaid)
+>>>>>>> 85f85e3 (implemented the Flask and done with the UI)
 
 ```mermaid
 flowchart TD
@@ -68,6 +96,7 @@ G --> I[monitor.log]
 A --> J[reports.py]
 J --> K[uptime_report.txt]
 ```
+<<<<<<< HEAD
 
 ---
 
@@ -125,3 +154,89 @@ J --> K[uptime_report.txt]
 
 
 
+=======
+
+---
+
+## 🚀 Features
+
+* Monitor multiple websites
+* Measure response time and status
+* Log monitoring activity
+* Store results in SQLite database
+* Generate uptime reports
+* Modular and easy to extend
+
+---
+
+## ⚙️ How It Works
+
+1. `main.py` starts the monitoring process.
+2. `monitor.py` sends HTTP requests to websites.
+3. Response time and status are calculated.
+4. Results are saved via `database.py` into `websites.db`.
+5. Logging is handled by `logger_config.py` into `monitor.log`.
+6. `reports.py` reads the database and creates `uptime_report.txt`.
+
+---
+
+## 🧩 Module Description
+
+| File               | Description                |
+| ------------------ | -------------------------- |
+| `main.py`          | Entry point of the project |
+| `monitor.py`       | Core monitoring logic      |
+| `database.py`      | SQLite database operations |
+| `logger_config.py` | Logging configuration      |
+| `reports.py`       | Generates uptime reports   |
+
+---
+
+## 🛠️ Requirements
+
+* Python 3.8+
+* Install dependency:
+
+```bash
+pip install requests
+```
+
+---
+
+## ▶️ Run the Project
+
+```bash
+python main.py
+```
+
+---
+
+## 📊 Output Files
+
+| File                | Purpose                   |
+| ------------------- | ------------------------- |
+| `websites.db`       | Stores monitoring results |
+| `monitor.log`       | Logs system activity      |
+| `uptime_report.txt` | Uptime summary report     |
+
+---
+
+## ✨ Future Improvements
+
+* Email/SMS alerts for downtime
+* Config file for websites
+* Web dashboard
+* CSV/JSON export
+* Task scheduling (cron)
+
+---
+
+## 📜 License
+
+Free to use for educational and personal projects.
+
+---
+
+**Author:** Your Name
+    
+>>>>>>> 85f85e3 (implemented the Flask and done with the UI)
