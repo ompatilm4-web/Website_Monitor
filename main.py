@@ -5,7 +5,7 @@ import core.reports
 
 app = Flask(__name__)
 
-# Make sure the SQLite table exists before any route tries to use it
+
 core.database.init_db()
 
 @app.route("/")
@@ -15,7 +15,7 @@ def home():
 @app.route("/monitor")
 def monitor_page():
     data = core.monitor.monitor()
-    return render_template("monitor.html", websites=data)
+    return render_template("Monitor.html", websites=data)
 
 @app.route("/report")
 def report_page():
