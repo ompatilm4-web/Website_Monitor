@@ -2,6 +2,3 @@ flask
 requests
 beautifulsoup4
 pandas
-matplotlib
-schedule
-bs4

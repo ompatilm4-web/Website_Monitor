@@ -1,69 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
+{% block title %}Reports - Website Monitor{% endblock %}
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block content %}
 
-    <title>Reports</title>
+<h1 class="page-title">Website Reports</h1>
+<p class="page-subtitle">Latest saved response times and status per website</p>
 
-    <style>
+<div class="table-wrap">
 
-        body{
-            font-family: Arial, Helvetica, sans-serif;
-            background:#f4f4f4;
-            margin:0;
-            padding:40px;
-        }
-
-        h1{
-            text-align:center;
-            color:#333;
-        }
-
-        table{
-            width:85%;
-            margin:auto;
-            border-collapse:collapse;
-            background:white;
-        }
-
-        th, td{
-            border:1px solid #ccc;
-            padding:15px;
-            text-align:center;
-        }
-
-        th{
-            background:#28a745;
-            color:white;
-        }
-
-        tr:nth-child(even){
-            background:#f9f9f9;
-        }
-
-        .back{
-            display:block;
-            width:150px;
-            margin:30px auto;
-            text-align:center;
-            text-decoration:none;
-            background:#28a745;
-            color:white;
-            padding:12px;
-            border-radius:5px;
-        }
-
-    </style>
-
-</head>
-
-<body>
-
-    <h1>Website Reports</h1>
-
+    {% if reports %}
     <table>
 
         <tr>
@@ -73,23 +19,35 @@
         </tr>
 
         {% for item in reports %}
-
         <tr>
-
             <td>{{ item.website }}</td>
-            <td>{{ item.response_time }}</td>
-            <td>{{ item.status }}</td>
-
+            <td>
+                {% if item.response_time %}
+                    {{ "%.2f"|format(item.response_time) }}s
+                {% else %}
+                    —
+                {% endif %}
+            </td>
+            <td>
+                {% if item.status == "UP" %}
+                <span class="badge badge-up">● UP</span>
+                {% else %}
+                <span class="badge badge-down">● DOWN</span>
+                {% endif %}
+            </td>
         </tr>
-
         {% endfor %}
 
     </table>
+    {% else %}
+    <div class="empty-state">No reports available yet. Run a check from the Monitor page first.</div>
+    {% endif %}
 
-    <a href="/" class="back">
-        Back Home
-    </a>
+</div>
 
-</body>
+<div class="actions">
+    <a href="/monitor" class="btn btn-primary">Run New Check</a>
+    <a href="/" class="btn btn-secondary">Back Home</a>
+</div>
 
-</html>
+{% endblock %}

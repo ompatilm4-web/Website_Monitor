@@ -2,8 +2,10 @@ import os
 import pandas as pd
 import sqlite3 as sq
 
+from core.paths import DB_PATH, REPORTS_DIR, REPORT_CSV_PATH
+
 def making_report ():
-    connection=sq.connect("data/websites.db")
+    connection=sq.connect(DB_PATH)
     cursor =connection.cursor ()
 
     DATA=cursor.execute("SELECT * FROM WEBSITES_DATA ")
@@ -24,9 +26,9 @@ def making_report ():
 def report():
     Data = making_report()
 
-    os.makedirs("reports", exist_ok=True)
+    os.makedirs(REPORTS_DIR, exist_ok=True)
     Data.to_csv(
-        "reports/uptime_report.csv",
+        REPORT_CSV_PATH,
         index=False
     )
 

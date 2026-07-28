@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Monitor - Website Monitor{% endblock %}
+
+{% block content %}
+
+<h1 class="page-title">Website Monitoring</h1>
+<p class="page-subtitle">Live status of all tracked websites</p>
+
+<div class="table-wrap">
+
+    {% if websites %}
+    <table>
+
+        <tr>
+            <th>Website</th>
+            <th>Status</th>
+        </tr>
+
+        {% for site in websites %}
+        <tr>
+            <td>{{ site.name }}</td>
+            <td>
+                {% if site.status == "UP" %}
+                <span class="badge badge-up">● UP</span>
+                {% else %}
+                <span class="badge badge-down">● DOWN</span>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    {% else %}
+    <div class="empty-state">No websites have been checked yet.</div>
+    {% endif %}
+
+</div>
+
+<div class="actions">
+    <a href="/monitor" class="btn btn-primary">Re-check Now</a>
+    <a href="/report" class="btn btn-secondary">View Reports</a>
+</div>
+
+{% endblock %}

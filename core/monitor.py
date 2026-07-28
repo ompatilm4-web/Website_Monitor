@@ -5,6 +5,7 @@ import sqlite3 as sq
 from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor
 from core import logger_config
+from core.paths import DB_PATH
 
 
 def Fetch_data(Url):
@@ -42,7 +43,7 @@ def Fetch_data(Url):
         print(f"Error : {e}")
 
     # Connect Database
-    connection = sq.connect('data/websites.db')
+    connection = sq.connect(DB_PATH)
     cursor = connection.cursor()
     # Insert Data (whether the check succeeded or failed)
     cursor.execute('''
@@ -108,7 +109,7 @@ def monitor():
         list(TPE.map(Fetch_data, Urls))
 
     # Read back the freshly-checked results so the /monitor page has data to show
-    connection = sq.connect('data/websites.db')
+    connection = sq.connect(DB_PATH)
     cursor = connection.cursor()
     rows = cursor.execute(
         "SELECT WEBSITE_NAME, STATUS FROM WEBSITES_DATA"

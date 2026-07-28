@@ -1,11 +1,13 @@
 import os
 import logging
 
-os.makedirs('logs', exist_ok=True)
+from core.paths import LOG_DIR, LOG_PATH
+
+os.makedirs(LOG_DIR, exist_ok=True)
 
 logging.basicConfig(
 
-    filename='logs/monitor.log',
+    filename=LOG_PATH,
 
     level=logging.INFO,
 
